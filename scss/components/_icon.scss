@@ -1,0 +1,25 @@
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  box-sizing: content-box;
+
+  &-small {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &.roundy {
+    border-radius: 50%;
+  }
+
+}
+
+.notif {
+  transition: .2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: rotate(20deg);
+  }
+}

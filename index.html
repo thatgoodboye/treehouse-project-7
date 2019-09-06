@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dashboard</title>
+
+  <!-- google "Raleway" font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,600&display=swap" rel="stylesheet" />
+  <!-- main stylesheet -->
+  <link href="main.css" rel="stylesheet" />
+  <!-- chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+  <header>
+    <h1 class="logo mr-auto">Your<span>App&trade;</span></h1>
+    <svg class="icon-small notif" viewBox="0 0 28 30" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#fff" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28 c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z" />
+    </svg>
+    <div class="h-100 bl mx"></div>
+    <img class="icon roundy" src="images/icon-1.png" alt="user profile picture" />
+    <div class="ml d-block-md">Chubby Doggerson</div>
+  </header>
+  <nav>
+    <img class="nav-item active" src="icons/dashboard.svg" alt="dashboard" />
+    <img class="nav-item" src="icons/members.svg" alt="members" />
+    <img class="nav-item" src="icons/visits.svg" alt="visits" />
+    <img class="nav-item" src="icons/settings.svg" alt="settings" />
+  </nav>
+  <main>
+    <header>
+      <div class="d-flex ai-center">
+        <h2 class="p">Dashboard</h2>
+        <div class="d-flex jc-end bg bl bb p fill">
+          <input class="input-light" type="search" placeholder="search" />
+        </div>
+      </div>
+      <div id="alert" class="m alert_box d-flex ai-start nowrap">
+        <strong>ALERT</strong>
+        <p class="fill px">Voluptatem tempora nulla ducimus perferendis minus aperiam et. Dolor nihil non voluptatem sed voluptatem. Dolores saepe quos nam unde beatae. Dolorem delectus quam sit earum esse dolorem consequatur labore.</p>
+        <button id="cross" class="alert_cross">&#10006;</button>
+      </div>
+    </header>
+    <section class="traffic bb">
+      <header class="d-flex ai-center wrap">
+        <h3 class="mr-auto">TRAFFIC</h3>
+        <div class="traffic_nav d-flex nowrap">
+          <button class="nav-item-pill">hourly</button>
+          <button class="nav-item-pill">daily</button>
+          <button class="nav-item-pill active">weekly</button>
+          <button class="nav-item-pill">monthly</button>
+        </div>
+      </header>
+      <div class="body">
+        <canvas id="traffic_canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="daily br-md bb">
+      <header>
+        <h3>DAILY TRAFFIC</h3>
+      </header>
+      <div class="body">
+        <canvas id="daily_canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="mobile bb">
+      <header>
+        <h3>MOBILE DATA</h3>
+      </header>
+      <div class="body">
+        <canvas id="mobile_canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="social bb">
+      <header>
+        <h3>SOCIAL STATS</h3>
+      </header>
+      <div class="body d-flex col wrap row-md">
+        <div class="card fill">
+          <img class="card_badge mr" src="icons/twitter.svg" alt="twitter brand" />
+          <div class="card_info">
+            <p class="card_name">Twitter</p>
+            <p class="card_stat">10,123</p>
+          </div>
+        </div>
+        <div class="card fill">
+          <img class="card_badge mr" src="icons/facebook.svg" alt="facebook brand" />
+          <div class="card_info">
+            <p class="card_name">Facebook</p>
+            <p class="card_stat">10,123</p>
+          </div>
+        </div>
+        <div class="card fill">
+          <img class="card_badge mr" src="icons/google-plus.svg" alt="google plus brand" />
+          <div class="card_info">
+            <p class="card_name">Google+</p>
+            <p class="card_stat">10,123</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="members bb br-md">
+      <header>
+        <h3>NEW MEMBER</h3>
+      </header>
+      <div class="body">
+        <div class="d-flex col">
+          <div class="member">
+            <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+            <div class="member_info fill">
+              <div class="d-flex">
+                <p class="member_name mr-auto">Chubby Doggerson</p>
+                <p>10/15/15</p>
+              </div>
+              <p><a class="link" href="#">chubby.doggerson92@example.com</a></p>
+            </div>
+          </div>
+          <div class="member">
+            <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+            <div class="member_info fill">
+              <div class="d-flex">
+                <p class="member_name mr-auto">Chubby Doggerson</p>
+                <p>10/15/15</p>
+              </div>
+              <p><a class="link" href="#">chubby.doggerson92@example.com</a></p>
+            </div>
+          </div>
+          <div class="member">
+            <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+            <div class="member_info fill">
+              <div class="d-flex">
+                <p class="member_name mr-auto">Chubby Doggerson</p>
+                <p>10/15/15</p>
+              </div>
+              <p><a class="link" href="#">chubby.doggerson92@example.com</a></p>
+            </div>
+          </div>
+          <div class="member">
+            <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+            <div class="member_info fill">
+              <div class="d-flex">
+                <p class="member_name mr-auto">Chubby Doggerson</p>
+                <p>10/15/15</p>
+              </div>
+              <p><a class="link" href="#">chubby.doggerson92@example.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity bb">
+      <header>
+        <h3>RECENT ACTIVITY</h3>
+      </header>
+      <div class="body">
+        <div class="member">
+          <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+          <div class="member_info fill">
+            <p class="member_name mr-auto">Chubby Doggerson posted YourApp's SEO Tips</p>
+            <p>4 hours ago</p>
+          </div>
+          <div class="member_arrow">&rsaquo;</div>
+        </div>
+        <div class="member">
+          <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+          <div class="member_info fill">
+            <p class="member_name mr-auto">Chubby Doggerson posted YourApp's SEO Tips</p>
+            <p>4 hours ago</p>
+          </div>
+          <div class="member_arrow">&rsaquo;</div>
+        </div>
+        <div class="member">
+          <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+          <div class="member_info fill">
+            <p class="member_name mr-auto">Chubby Doggerson posted YourApp's SEO Tips</p>
+            <p>4 hours ago</p>
+          </div>
+          <div class="member_arrow">&rsaquo;</div>
+        </div>
+        <div class="member">
+          <img class="icon roundy mr" src="images/icon-1.png" alt="" />
+          <div class="member_info fill">
+            <p class="member_name mr-auto">Chubby Doggerson posted YourApp's SEO Tips</p>
+            <p>4 hours ago</p>
+          </div>
+          <div class="member_arrow">&rsaquo;</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="message br-md bb">
+      <header>
+        <h3>MESSAGE USER</h3>
+      </header>
+      <div class="body">
+        <form id="myForm" class="form" action="#" method="POST">
+          <input class="input" type="text" name="user" placeholder="Search for User" required />
+          <textarea class="input" rows="5" type="text" name="message" placeholder="Message for User" required></textarea>
+          <button class="btn" type="submit">SEND</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="settings">
+      <header>
+        <h3>SETTINGS</h3>
+      </header>
+      <div class="body">
+        <form class="form">
+          <div class="d-flex ai-center nowrap mb">
+            <div class="fill">
+              Send Email Notifications
+            </div>
+            <div class="fill">
+              <label class="toggle">
+                <input type="checkbox" />
+                <div class="plate">
+                  <span class="on">ON</span>
+                  <div class="switch"></div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="d-flex ai-center nowrap mb">
+            <div class="fill">
+              Set Profile to Public
+            </div>
+            <div class="fill">
+              <label class="toggle">
+                <input type="checkbox" />
+                <div class="plate">
+                  <span class="on">ON</span>
+                  <div class="switch"></div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <select class="input">
+            <option>Select a Time Zone</option>
+            <option>Time Zone One</option>
+            <option>Time Zone Two</option>
+            <option>Time Zone Three</option>
+            <option>Time Zone Four</option>
+            <option>Time Zone Five</option>
+            <option>Time Zone Six</option>
+          </select>
+
+          <div class="d-flex col row-md ai-center">
+            <button class="btn fill mr-md">SAVE</button>
+            <button class="btn btn-grey fill">CANCEL</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- javascript -->
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+
+</html>
