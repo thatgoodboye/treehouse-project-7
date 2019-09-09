@@ -15,11 +15,26 @@
 
 }
 
-.notif {
+.bell {
   transition: .2s;
 
   &:hover {
     cursor: pointer;
     transform: rotate(20deg);
   }
+}
+
+.notif {
+  position: relative;
+  @include spacer("padding", $size: .25rem);
+}
+
+.notice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  width: .5rem;
+  height: .5rem;
+  background-color: $color-accent;
 }

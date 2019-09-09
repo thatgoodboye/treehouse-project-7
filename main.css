@@ -750,12 +750,27 @@ section.settings {
   border-radius: 50%;
 }
 
-.notif {
+.bell {
   transition: 0.2s;
 }
-.notif:hover {
+.bell:hover {
   cursor: pointer;
   transform: rotate(20deg);
+}
+
+.notif {
+  position: relative;
+  padding: 0.25rem;
+}
+
+.notice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #81c98f;
 }
 
 .nav-item {
@@ -825,6 +840,9 @@ canvas {
   }
 }
 .card_badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;

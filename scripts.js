@@ -106,17 +106,24 @@ let mobileChart = new Chart(mobileCanvas, {
 
 let myAlert = document.getElementById("alert");
 let cross = document.getElementById("cross");
+let notice = document.getElementById("notice");
 
 cross.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("click!");
   myAlert.parentNode.removeChild(myAlert);
+  notice.parentNode.removeChild(notice);
 });
 
-
 let myForm = document.getElementById("myForm");
+let msg = document.getElementById("myForm_msg");
+let user = document.getElementById("myForm_user");
 
 myForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  alert("Your message was sent! Thank you!");
+  if (!user.value)
+    alert("You must enter a user to message.");
+  else if (!msg.value)
+    alert("You must enter a message for the user.")
+  else
+    alert("Your message has been sent to " + msg.value + "!");
 });
